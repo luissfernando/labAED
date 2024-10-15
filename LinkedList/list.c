@@ -30,6 +30,7 @@ void pushInit(struct node** headRef, int newData){
   struct node* newNode = malloc(sizeof(struct node));
   newNode->data = newData;
   newNode->next = *headRef;
+  headRef = &newNode;
 }
 void print(struct node* head){
   while (head) {
