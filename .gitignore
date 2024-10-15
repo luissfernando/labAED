@@ -1,0 +1,7 @@
+#ignora los archivos .o
+*.o
+a.out
+.log
+.tmp
+ejecutable
+gdb
