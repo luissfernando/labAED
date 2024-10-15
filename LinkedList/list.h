@@ -3,6 +3,7 @@
 struct node{
   int data;
   struct node* next;
+  struct node* before;
 };
 
 void print(struct node* head);
