@@ -3,9 +3,12 @@
 int main(int argc, char *argv[])
 {
   struct node* head = BuildOneTwoThree();
-  int contador = size(head);
 
   pushInit(&head,5);
+  pushInit(&(head->next),6);
+  int contador = size(head);
   print(head);
+
+
 
 }

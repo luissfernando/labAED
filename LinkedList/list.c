@@ -35,7 +35,7 @@ void pushInit(struct node** headRef, int newData){
   newNode->next = *headRef;
   *headRef = newNode;
 
-  (**headRef).before = newNode;
+  //(**headRef).before = newNode;
 }
 
 
