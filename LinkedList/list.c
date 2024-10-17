@@ -1,7 +1,7 @@
 #include "list.h"
 #include <stdlib.h>
 #include <stdio.h>
-#define NDEBUG  //desactiva las aserciones
+//#define NDEBUG  //desactiva las aserciones
 #include <assert.h>
 struct node* BuildOneTwoThree(){
   struct node* head =malloc(sizeof(struct node));
@@ -48,18 +48,14 @@ void print(struct node* head){
   }
 }
 int getNth(struct node* head, int val){
- struct node* current = head;
- assert(head != NULL);
- assert(val >=0);
- assert(val < size(head)); 
- int i=0;
- while(current){
-  if(i == val){
-    return current->data;
+  assert(head != NULL);
+  assert(val >=0);
+  assert(val < size(head)); 
+  while(head && val){
+    head = head->next;
+    val--;
   }
-  current = current->next;
-  i++;
- }
+  return head->data;
 }
 void getNthTest(){
   struct node* myList = BuildOneTwoThree();
