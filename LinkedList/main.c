@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
   pushInit(&(head->next),6);
   int contador = size(head);
   print(head);
+  getNthTest();
 
 
 

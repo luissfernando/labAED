@@ -10,4 +10,6 @@ void print(struct node* head);
 struct node* BuildOneTwoThree();
 int size(struct node* head) ;
 void pushInit(struct node** headRef, int newData);
+void getNthTest();
+int getNth(struct node* head,int val);
 #endif // DEBUG
