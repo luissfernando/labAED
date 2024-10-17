@@ -57,7 +57,11 @@ int getNth(struct node* head, int val){
   }
   return head->data;
 }
-void getNthTest(){
-  struct node* myList = BuildOneTwoThree();
-  int lastNode = getNth(myList,-1);
+void deleteList(struct node** headRef){
+  int tam = size(*headRef);
+  struct node* current = *headRef;
+  //for(int i=0;i< size;i++){
+  free(current);
+
+  //}
 }

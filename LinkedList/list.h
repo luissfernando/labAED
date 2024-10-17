@@ -12,4 +12,5 @@ int size(struct node* head) ;
 void pushInit(struct node** headRef, int newData);
 void getNthTest();
 int getNth(struct node* head,int val);
+void deleteList(struct node** list);
 #endif // DEBUG
