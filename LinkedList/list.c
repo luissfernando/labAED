@@ -58,10 +58,11 @@ int getNth(struct node* head, int val){
   return head->data;
 }
 void deleteList(struct node** headRef){
-  int tam = size(*headRef);
-  struct node* current = *headRef;
-  //for(int i=0;i< size;i++){
-  free(current);
-
-  //}
+  struct node* temp ;
+  while (*headRef) {
+    temp = *headRef;
+    *headRef= (*headRef)->next;
+    free(temp);
+  }
+  free(headRef);
 }
