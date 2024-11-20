@@ -11,6 +11,8 @@ int main(int argc, char *argv[])
   //getNth(head,-1);
   deleteList(&head);
   print(head);
+  deleteList(&head);
+
 
 
 
