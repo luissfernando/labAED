@@ -109,7 +109,13 @@ int hasPathSum(struct node* node, int sum){
   if(node==NULL)
     return sum == 0; // expresion booleana FALSE
   else{
-    return hasPathSum(node->left,sum - node->data) 
+    return hasPathSum(node->left,sum - node->data)
     || hasPathSum(node->right,sum - node->data);
   }
 }
+void printArray(int path[],int pathLen){
+  for(int i=0;i<pathLen;i++)
+    printf("%d ", path[i]);
+  printf("\n");
+}
+
