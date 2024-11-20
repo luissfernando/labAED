@@ -7,9 +7,10 @@ int main(int argc, char *argv[])
   //pushInit(&head,5);
   //pushInit(&(head->next),6);
   //int contador = size(head);
-  //print(head);
+  print(head);
   //getNth(head,-1);
   deleteList(&head);
+  print(head);
 
 
 

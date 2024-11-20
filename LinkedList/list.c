@@ -19,8 +19,6 @@ struct node* BuildOneTwoThree(){
 
   return head;
 }
-
-
 int size(struct node* head){
   int count = 0;
   while (head) {
@@ -29,8 +27,6 @@ int size(struct node* head){
   }
   return count;
 }
-
-
 void pushInit(struct node** headRef, int newData){
   struct node* newNode = malloc(sizeof(struct node));
   newNode->data = newData;
@@ -39,13 +35,15 @@ void pushInit(struct node** headRef, int newData){
 
   //(**headRef).before = newNode;
 }
-
-
 void print(struct node* head){
-  while (head) {
-    printf("%d\n",head->data);
-    head = head->next;
+  if(!head){
+    return ;
   }
+  else{
+    while (head) {
+      printf("%d\n",head->data);
+      head = head->next;
+    }}
 }
 int getNth(struct node* head, int val){
   assert(head != NULL);
@@ -59,10 +57,11 @@ int getNth(struct node* head, int val){
 }
 void deleteList(struct node** headRef){
   struct node* temp ;
-  while (*headRef) {
-    temp = *headRef;
-    *headRef= (*headRef)->next;
+  struct node* current = *headRef;
+  while (current) {
+    temp = current;
+    current = current->next;
     free(temp);
   }
-  free(headRef);
+  *headRef=NULL;
 }
