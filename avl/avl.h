@@ -11,4 +11,5 @@ struct AVL* insertBST(struct AVL* node, int data);
 int height(struct AVL* node);
 int balanceFactor(struct AVL* node);
 int isBalance(struct AVL* node);
+struct AVL* leftRotation(struct AVL* node);
 #endif
