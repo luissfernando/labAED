@@ -22,7 +22,7 @@ struct node* build123(){
   insert(root,5);
   insert(root,4);
   insert(root,6);
-  //insert(root,7);
+  insert(root,7);
   //insert(root,8);
 
   return root;
@@ -106,13 +106,40 @@ int minValue(struct node* node){
   }
 }
 int hasPathSum(struct node* node, int sum){
-  if(node==NULL)
+  assert(node!=NULL);
+  if(node->left==NULL && node->right==NULL)
     return sum == 0; // expresion booleana FALSE
   else{
-    return hasPathSum(node->left,sum - node->data)
-    || hasPathSum(node->right,sum - node->data);
+    return hasPathSum((node->left!=NULL) ? node->left : node ,sum - node->data)
+    || hasPathSum((node->right!=NULL) ? node->right : node,sum - node->data);
   }
 }
+int hasPathSum2(struct node* node, int sum) {
+    // Verificar si el nodo es NULL (caso base)
+    if (node == NULL) {
+        return 0; // No hay camino en un árbol vacío
+    }
+
+    // Restar el valor del nodo actual de la suma
+    sum -= node->data;
+
+    // Verificar si el nodo es una hoja
+    if (node->left == NULL && node->right == NULL) {
+        return sum == 0; // Si la suma restante es 0, se encontró el camino
+    }
+
+    // Llamadas recursivas a los subárboles izquierdo y derecho (solo si no son NULL)
+    if (node->left != NULL && hasPathSum(node->left, sum)) {
+        return 1;
+    }
+    if (node->right != NULL && hasPathSum(node->right, sum)) {
+        return 1;
+    }
+
+    // Si no se encontró el camino, retornar 0
+    return 0;
+}
+
 void printArray(int path[],int pathLen){
   for(int i=0;i<pathLen;i++)
     printf("%d ", path[i]);

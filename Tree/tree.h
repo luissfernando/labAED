@@ -15,6 +15,7 @@ void printPosOr(struct node* node);
 int maxDepth(struct node* node);
 int minValue(struct node* node);
 int hasPathSum(struct node* node, int sum);
+int hasPathSum2(struct node* node, int sum);
 void printPaths(struct node* node);
 
 #endif // !DEBUG

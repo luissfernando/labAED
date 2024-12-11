@@ -62,18 +62,6 @@ struct AVL* newNode(int data){
 
     y->left = x;
     x->parent= y;
-
-    //xParent = 
-    /*if(xParent != NULL){
-      if(xParent->left = x){
-        xParent->left = y;
-      }
-      else{
-        xParent->right= y;
-      }
-    }*/
-
-    //y->parent = xParent;
     assert(y);
     return y;
   }
